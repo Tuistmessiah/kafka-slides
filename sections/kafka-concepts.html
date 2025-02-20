@@ -1,0 +1,164 @@
+<!-- Slide 3.1: Kafka Concepts Overview -->
+<section>
+    <h2>🔹 Overview: Kafka Concepts</h2>
+    <ul>
+        <li><b>1.</b> Topics</li>
+        <li><b>2.</b> Partitions</li>
+        <li><b>3.</b> Broker</li>
+        <li><b>4.</b> Cluster</li>
+        <li><b>5.</b> Replication Factor</li>
+        <li><b>6.</b> Producer</li>
+    </ul>
+    <ul>
+        <li><b>7.</b> Message</li>
+        <li><b>8.</b> Consumer</li>
+        <li><b>9.</b> Consumer Group</li>
+        <li><b>10.</b> Offsets</li>
+        <li><b>11.</b> Zookeeper</li>
+    </ul>
+    <p class="down">⬇️ Topics</p>
+</section>
+
+<!-- Slide 3.2: Topics -->
+<section>
+    <h2>🔹 Topics</h2>
+    <ul>
+        <li>📌 **A topic is a stream of data**, similar to a table in a database</li>
+        <li>🔠 Topics have **names**</li>
+        <li>➕ You can create **as many topics as needed**</li>
+    </ul>
+    <p class="down">⬇️ Topics Illustration</p>
+</section>
+
+<!-- Slide 3.3: Topics (Illustration) -->
+<section>
+    <h2>📌 Topics in Kafka</h2>
+    <img src="images/kafka-topics.png" alt="Kafka Topics" width="80%" />
+    <p class="down">⬇️ Partitions</p>
+</section>
+
+<!-- Slide 3.4: Partitions -->
+<section>
+    <h2>🔹 Partitions</h2>
+    <ul>
+        <li>📂 Topics are divided into **partitions**</li>
+        <li>🔢 **Each message has an auto-incremented ID (offset)**</li>
+        <li>⚖️ Partitions don’t need to have the same length</li>
+        <li>🛑 **Immutable**: Once written, messages can't change</li>
+    </ul>
+    <p class="down">⬇️ Partitions Illustration</p>
+</section>
+
+<!-- Slide 3.5: Partitions (Illustration) -->
+<section>
+    <h2>📂 Partitioning in Kafka</h2>
+    <img src="images/kafka-partitions.png" alt="Kafka Partitions" width="80%" />
+    <p class="down">⬇️ Kafka Broker</p>
+</section>
+
+<!-- Slide 3.6: Kafka Broker -->
+<section>
+    <h2>🔹 Kafka Broker</h2>
+    <ul>
+        <li>🖥️ A **server that stores topic partitions**</li>
+        <li>📡 Each broker **knows all topics & partitions**</li>
+        <li>🔄 Provides **metadata to producers & consumers**</li>
+    </ul>
+    <p class="down">⬇️ Kafka Broker Illustration</p>
+</section>
+
+<!-- Slide 3.7: Kafka Broker (Illustration) -->
+<section>
+    <h2>🖥️ Kafka Brokers</h2>
+    <img src="images/kafka-broker.png" alt="Kafka Broker" width="80%" />
+    <p class="down">⬇️ Kafka Cluster</p>
+</section>
+
+<!-- Slide 3.8: Kafka Cluster -->
+<section>
+    <h2>🔹 Kafka Cluster</h2>
+    <ul>
+        <li>🖧 Consists of **multiple brokers**</li>
+        <li>🔌 **Clients connect to the whole cluster** via any broker</li>
+    </ul>
+    <p class="down">⬇️ Kafka Cluster Illustration</p>
+</section>
+
+<!-- Slide 3.9: Kafka Cluster (Illustration) -->
+<section>
+    <h2>🖧 Kafka Cluster Architecture</h2>
+    <img src="images/kafka-cluster.png" alt="Kafka Cluster" width="80%" />
+    <p class="down">⬇️ Topic Replication</p>
+</section>
+
+<!-- Slide 3.10: Topic Replication -->
+<section>
+    <h2>🔹 Topic Replication</h2>
+    <ul>
+        <li>🔁 **Avoids data loss** by replicating topics</li>
+        <li>👑 Each partition has a **leader**</li>
+        <li>🔄 Other brokers store **replicated partitions**</li>
+    </ul>
+    <p class="down">⬇️ Replication Factor Illustration</p>
+</section>
+
+<!-- Slide 3.11: Replication Factor (Illustration) -->
+<section>
+    <h2>🛡️ Kafka Replication Factor</h2>
+    <img src="images/kafka-replication.png" alt="Kafka Replication" width="80%" />
+    <p class="down">⬇️ Producers</p>
+</section>
+
+<!-- Slide 3.12: Producers -->
+<section>
+    <h2>🔹 Producers</h2>
+    <ul>
+        <li>✉️ **Send messages to Kafka topics**</li>
+        <li>🎯 Decide which **partition to write to**</li>
+        <li>⚖️ **Load balancing** using round-robin</li>
+    </ul>
+    <p class="down">⬇️ Producer Illustration</p>
+</section>
+
+<!-- Slide 3.13: Producer (Illustration) -->
+<section>
+    <h2>✉️ Kafka Producers</h2>
+    <img src="images/kafka-producer.png" alt="Kafka Producer" width="80%" />
+    <p class="down">⬇️ Consumers</p>
+</section>
+
+<!-- Slide 3.14: Consumers -->
+<section>
+    <h2>🔹 Consumers</h2>
+    <ul>
+        <li>📥 **Read data from topics**</li>
+        <li>📌 Read messages **in order within partitions**</li>
+        <li>🔄 Can belong to **consumer groups**</li>
+    </ul>
+    <p class="down">⬇️ Consumer Illustration</p>
+</section>
+
+<!-- Slide 3.15: Consumer (Illustration) -->
+<section>
+    <h2>📥 Kafka Consumers</h2>
+    <img src="images/kafka-consumer.png" alt="Kafka Consumer" width="80%" />
+    <p class="down">⬇️ Zookeeper</p>
+</section>
+
+<!-- Slide 3.16: Zookeeper -->
+<section>
+    <h2>🔹 Zookeeper</h2>
+    <ul>
+        <li>🔧 **Manages brokers** & elects partition leaders</li>
+        <li>📊 Keeps track of **metadata & cluster state**</li>
+        <li>⚡ Essential for **Kafka coordination**</li>
+    </ul>
+    <p class="down">⬇️ Zookeeper Illustration</p>
+</section>
+
+<!-- Slide 3.17: Zookeeper (Illustration) -->
+<section>
+    <h2>🔧 Kafka Zookeeper</h2>
+    <img src="images/kafka-zookeeper.png" alt="Kafka Zookeeper" width="80%" />
+    <p class="down">Kafka Streams API ➡️</p>
+</section>

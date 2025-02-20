@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kafka Streaming Workshop</title>
+        <link rel="stylesheet" href="dist/reset.css" />
+        <link rel="stylesheet" href="dist/reveal.css" />
+        <link rel="stylesheet" href="dist/theme/black.css" />
+        <link rel="stylesheet" href="css/custom.css" />
+        <!-- Change theme if needed -->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section id="begin">Start ➡️</section>
+
+                <!-- Slide 1: Title Slide -->
+                <section id="introduction"></section>
+
+                <!-- Slide 2: Introduction (Main Topic) -->
+                <section id="what-is-kafka"></section>
+
+                <!-- Slide 3: Kafka Theory (Main Topic) -->
+                <section id="kafka-concepts"></section>
+
+                <!-- Slide 4: Exercise -->
+                <section id="design"></section>
+
+                <!-- Slide 5: Interactive Demo 1 -->
+                <section id="demo-CLI"></section>
+
+                <!-- Slide 6: Interactive Demo 2 -->
+                <section id="demo-apps"></section>
+
+                <!-- Slide 7: Quiz + Wrap-up -->
+                <section id="quizz-wrap-up"></section>
+            </div>
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                slideNumber: true,
+                transition: 'slide',
+            });
+
+            // Load external Kafka Concepts HTML
+            function loadKafkaConcepts() {
+                function fetcher(sectionName) {
+                    fetch(`sections/${sectionName}.html`)
+                        .then((response) => response.text())
+                        .then((data) => {
+                            document.getElementById(sectionName).innerHTML = data;
+                            Reveal.sync();
+                        })
+                        .catch((error) => console.error('Error loading Kafka Concepts:', error));
+                }
+
+                fetcher('introduction');
+                fetcher('what-is-kafka');
+                fetcher('kafka-concepts');
+                fetcher('design');
+                fetcher('demo-CLI');
+                fetcher('demo-apps');
+                fetcher('quizz-wrap-up');
+            }
+
+            window.onload = loadKafkaConcepts;
+        </script>
+    </body>
+</html>

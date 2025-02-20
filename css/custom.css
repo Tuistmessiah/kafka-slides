@@ -1,0 +1,46 @@
+p.right {
+    font-size: 0.5em;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    animation: fadeIn 1s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+p.down {
+    font-size: 0.4em;
+    position: absolute;
+    left: 50%;
+    bottom: -5rem;
+    transform: translateX(-50%);
+
+    animation: fadeIn 1s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+li {
+    font-size: 25px;
+}
+
+p {
+    font-size: 25px;
+}
+
+tbody {
+    font-size: 1.5rem;
+}
+
+code {
+    font-size: 1rem;
+}
+
+h2 {
+    font-size: 3rem !important;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

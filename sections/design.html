@@ -1,0 +1,159 @@
+<section>
+    <h2>🔹 Exercise: Design Kafka Architecture</h2>
+    <p>Hands-on: Work on designing a Kafka pipeline.</p>
+    <p class="right">Kafka CLI ➡️</p>
+</section>
+
+<section>
+    <h2>🛠️ Exercise 1: Kafka-based IoT Data Pipeline</h2>
+    <p><strong>Objective:</strong> Design a real-time data pipeline for a smart city using Kafka.</p>
+    <ol>
+        <li>Identify IoT devices and data streams.</li>
+        <li>Define Kafka topics for each data stream.</li>
+        <li>Plan data ingestion and processing layers.</li>
+        <li>Design the Kafka cluster</li>
+        <li>Design the data processing and analysis layer</li>
+        <li>Design storage.</li>
+        <li>Design visualization an alerting dashboard</li>
+        <li>Sketch the architecture.</li>
+    </ol>
+    <p class="down">⬇️ Solution: step 1</p>
+</section>
+
+<section>
+    <h2>📋 Step 1: IoT Devices & Data Streams</h2>
+    <table>
+        <tr>
+            <th>IoT Device</th>
+            <th>Data Stream</th>
+            <th>Example Format</th>
+        </tr>
+        <tr>
+            <td>Traffic Sensors</td>
+            <td>Vehicle count, speed</td>
+            <td>{"sensor_id":1, "speed":45, "count":10}</td>
+        </tr>
+        <tr>
+            <td>Weather Stations</td>
+            <td>Temperature, humidity</td>
+            <td>{"station_id":5, "temperature":25.3}</td>
+        </tr>
+        <tr>
+            <td>Energy Meters</td>
+            <td>Power consumption</td>
+            <td>{"meter_id":1001, "usage":3.5}</td>
+        </tr>
+        <tr>
+            <td>Air Quality Monitors</td>
+            <td>CO2 levels, AQI</td>
+            <td>{"monitor_id":3, "aqi":90}</td>
+        </tr>
+    </table>
+    <p class="down">⬇️ Solution: step 2</p>
+</section>
+
+<section>
+    <h2>📦 Step 2: Kafka Topics</h2>
+    <ul>
+        <li><strong>traffic-data:</strong> Real-time traffic data</li>
+        <li><strong>weather-data:</strong> Environmental readings</li>
+        <li><strong>energy-usage:</strong> Household power data</li>
+        <li><strong>air-quality:</strong> Air pollution levels</li>
+    </ul>
+    <p class="down">⬇️ Solution: step 3</p>
+</section>
+
+<section>
+    <h2>🔄 Step 3: Data Ingestion Layer</h2>
+    <p>IoT devices send data to Kafka:</p>
+    <ul>
+        <li><strong>Producers:</strong> Each device acts as a Kafka producer.</li>
+        <li><strong>Protocol:</strong> MQTT or HTTP Kafka REST Proxy.</li>
+        <li><strong>Format:</strong> JSON or Avro for structured messages.</li>
+    </ul>
+    <pre><code class="language-js">
+const message = JSON.stringify({
+  sensor_id: 1,
+  location: "A1",
+  speed: Math.random() * 80,
+  count: Math.random() * 20
+});
+producer.send([{ topic: "traffic-data", messages: message }]);
+    </code></pre>
+    <p class="down">⬇️ Solution: step 4</p>
+</section>
+
+<section>
+    <h2>⚙️ Step 4: Kafka Cluster</h2>
+    <p>Configure Kafka Cluster:</p>
+    <ul>
+        <li><strong>Brokers:</strong> 3 for fault tolerance</li>
+        <li><strong>Partitions:</strong> Multiple partitions for parallel processing</li>
+        <li><strong>Replication:</strong> Factor of 3 for high availability</li>
+    </ul>
+    <pre><code class="language-yaml">
+        version: '3'
+        services:
+          zookeeper:
+            image: wurstmeister/zookeeper
+            ports:
+              - "2181:2181"
+        
+          kafka:
+            image: wurstmeister/kafka
+            ports:
+              - "9092:9092"
+            environment:
+              KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+              KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    </code></pre>
+    <p class="down">⬇️ Solution: step 5</p>
+</section>
+
+<section>
+    <h2>🔍 Step 5: Data Processing & Analysis</h2>
+    <p>Use Kafka Streams for real-time analysis:</p>
+    <pre><code class="language-js">
+trafficStream
+  .mapJSONParse()
+  .groupByKey()
+  .countByKey("traffic-store", 5 * 60 * 1000)
+  .to("traffic-aggregated");
+    </code></pre>
+    <p class="down">⬇️ Solution: step 6</p>
+</section>
+
+<section>
+    <h2>💾 Step 6: Data Storage Layer</h2>
+    <p>Store processed data:</p>
+    <ul>
+        <li><strong>PostgreSQL:</strong> Structured data</li>
+        <li><strong>Elasticsearch:</strong> Real-time search</li>
+        <li><strong>S3:</strong> Big data storage</li>
+    </ul>
+    <pre><code class="language-js">
+client.query("INSERT INTO traffic_data (sensor_id, speed, count)
+VALUES ($1, $2, $3)", [data.sensor_id, data.speed, data.count]);
+    </code></pre>
+    <p class="right">Visualization ➡️</p>
+</section>
+
+<section>
+    <h2>📊 Step 7: Visualization & Alerting</h2>
+    <ul>
+        <li><strong>Dashboard:</strong> Grafana or Kibana</li>
+        <li><strong>Alerts:</strong> Anomalies trigger notifications</li>
+    </ul>
+    <pre><code class="language-js">
+if (event.count > 50) {
+  console.log(`🚨 High Traffic Alert: ${event.location}`);
+}
+    </code></pre>
+    <p class="right">Architecture Sketch ➡️</p>
+</section>
+
+<section>
+    <h2>📝 Step 8: Architecture Diagram</h2>
+    <img src="/mnt/data/A_detailed_architecture_diagram_of_a_Kafka-based_I.png" alt="Kafka IoT Architecture" />
+    <p class="right">Summary ➡️</p>
+</section>
