@@ -1,7 +1,7 @@
 <section>
     <h2>🔹 Exercise: Design Kafka Architecture</h2>
     <p>Hands-on: Work on designing a Kafka pipeline.</p>
-    <p class="right">Kafka CLI ➡️</p>
+    <p class="right">Demo: Kafka CLI ➡️</p>
 </section>
 
 <section>
@@ -135,7 +135,7 @@ trafficStream
 client.query("INSERT INTO traffic_data (sensor_id, speed, count)
 VALUES ($1, $2, $3)", [data.sensor_id, data.speed, data.count]);
     </code></pre>
-    <p class="right">Visualization ➡️</p>
+    <p class="down">⬇️ Solution: step 7</p>
 </section>
 
 <section>
@@ -149,11 +149,11 @@ if (event.count > 50) {
   console.log(`🚨 High Traffic Alert: ${event.location}`);
 }
     </code></pre>
-    <p class="right">Architecture Sketch ➡️</p>
+    <p class="down">⬇️ Solution: step 8</p>
 </section>
 
 <section>
     <h2>📝 Step 8: Architecture Diagram</h2>
     <img src="/mnt/data/A_detailed_architecture_diagram_of_a_Kafka-based_I.png" alt="Kafka IoT Architecture" />
-    <p class="right">Summary ➡️</p>
+    <p class="down">Summary ➡️</p>
 </section>

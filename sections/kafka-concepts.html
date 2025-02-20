@@ -16,16 +16,16 @@
         <li><b>10.</b> Offsets</li>
         <li><b>11.</b> Zookeeper</li>
     </ul>
-    <p class="down">⬇️ Topics</p>
+    <p class="right">Exercise: Design ➡️</p>
 </section>
 
 <!-- Slide 3.2: Topics -->
 <section>
     <h2>🔹 Topics</h2>
     <ul>
-        <li>📌 **A topic is a stream of data**, similar to a table in a database</li>
-        <li>🔠 Topics have **names**</li>
-        <li>➕ You can create **as many topics as needed**</li>
+        <li>📌 <b>A topic is a stream of data</b>, similar to a table in a database</li>
+        <li>🔠 Topics have <b>names</b></li>
+        <li>➕ You can create <b>as many topics as needed</b></li>
     </ul>
     <p class="down">⬇️ Topics Illustration</p>
 </section>
@@ -41,10 +41,10 @@
 <section>
     <h2>🔹 Partitions</h2>
     <ul>
-        <li>📂 Topics are divided into **partitions**</li>
-        <li>🔢 **Each message has an auto-incremented ID (offset)**</li>
+        <li>📂 Topics are divided into <b>partitions</b></li>
+        <li>🔢 <b>Each message has an auto-incremented ID (offset)</b></li>
         <li>⚖️ Partitions don’t need to have the same length</li>
-        <li>🛑 **Immutable**: Once written, messages can't change</li>
+        <li>🛑 <b>Immutable</b>: Once written, messages can't change</li>
     </ul>
     <p class="down">⬇️ Partitions Illustration</p>
 </section>
@@ -60,9 +60,9 @@
 <section>
     <h2>🔹 Kafka Broker</h2>
     <ul>
-        <li>🖥️ A **server that stores topic partitions**</li>
-        <li>📡 Each broker **knows all topics & partitions**</li>
-        <li>🔄 Provides **metadata to producers & consumers**</li>
+        <li>🖥️ A <b>server that stores topic partitions</b></li>
+        <li>📡 Each broker <b>knows all topics & partitions</b></li>
+        <li>🔄 Provides <b>metadata to producers & consumers</b></li>
     </ul>
     <p class="down">⬇️ Kafka Broker Illustration</p>
 </section>
@@ -78,8 +78,8 @@
 <section>
     <h2>🔹 Kafka Cluster</h2>
     <ul>
-        <li>🖧 Consists of **multiple brokers**</li>
-        <li>🔌 **Clients connect to the whole cluster** via any broker</li>
+        <li>🖧 Consists of <b>multiple brokers</b></li>
+        <li>🔌 <b>Clients connect to the whole cluster</b> via any broker</li>
     </ul>
     <p class="down">⬇️ Kafka Cluster Illustration</p>
 </section>
@@ -95,9 +95,9 @@
 <section>
     <h2>🔹 Topic Replication</h2>
     <ul>
-        <li>🔁 **Avoids data loss** by replicating topics</li>
-        <li>👑 Each partition has a **leader**</li>
-        <li>🔄 Other brokers store **replicated partitions**</li>
+        <li>🔁 <b>Avoids data loss</b> by replicating topics</li>
+        <li>👑 Each partition has a <b>leader</b></li>
+        <li>🔄 Other brokers store <b>replicated partitions</b></li>
     </ul>
     <p class="down">⬇️ Replication Factor Illustration</p>
 </section>
@@ -113,9 +113,9 @@
 <section>
     <h2>🔹 Producers</h2>
     <ul>
-        <li>✉️ **Send messages to Kafka topics**</li>
-        <li>🎯 Decide which **partition to write to**</li>
-        <li>⚖️ **Load balancing** using round-robin</li>
+        <li>✉️ <b>Send messages to Kafka topics</b></li>
+        <li>🎯 Decide which <b>partition to write to</b></li>
+        <li>⚖️ <b>Load balancing</b> using round-robin</li>
     </ul>
     <p class="down">⬇️ Producer Illustration</p>
 </section>
@@ -131,9 +131,9 @@
 <section>
     <h2>🔹 Consumers</h2>
     <ul>
-        <li>📥 **Read data from topics**</li>
-        <li>📌 Read messages **in order within partitions**</li>
-        <li>🔄 Can belong to **consumer groups**</li>
+        <li>📥 <b>Read data from topics</b></li>
+        <li>📌 Read messages <b>in order within partitions</b></li>
+        <li>🔄 Can belong to <b>consumer groups</b></li>
     </ul>
     <p class="down">⬇️ Consumer Illustration</p>
 </section>
@@ -149,9 +149,9 @@
 <section>
     <h2>🔹 Zookeeper</h2>
     <ul>
-        <li>🔧 **Manages brokers** & elects partition leaders</li>
-        <li>📊 Keeps track of **metadata & cluster state**</li>
-        <li>⚡ Essential for **Kafka coordination**</li>
+        <li>🔧 <b>Manages brokers</b> & elects partition leaders</li>
+        <li>📊 Keeps track of <b>metadata & cluster state</b></li>
+        <li>⚡ Essential for <b>Kafka coordination</b></li>
     </ul>
     <p class="down">⬇️ Zookeeper Illustration</p>
 </section>
