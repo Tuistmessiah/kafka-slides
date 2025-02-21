@@ -33,7 +33,7 @@
 <!-- Slide 3.3: Topics (Illustration) -->
 <section>
     <h2>📌 Topics in Kafka</h2>
-    <img src="images/kafka-topics.png" alt="Kafka Topics" width="80%" />
+    <img src="images/topics.png" alt="Kafka Topics" width="80%" />
     <p class="down">⬇️ Partitions</p>
 </section>
 
@@ -52,25 +52,7 @@
 <!-- Slide 3.5: Partitions (Illustration) -->
 <section>
     <h2>📂 Partitioning in Kafka</h2>
-    <img src="images/kafka-partitions.png" alt="Kafka Partitions" width="80%" />
-    <p class="down">⬇️ Kafka Broker</p>
-</section>
-
-<!-- Slide 3.6: Kafka Broker -->
-<section>
-    <h2>🔹 Kafka Broker</h2>
-    <ul>
-        <li>🖥️ A <b>server that stores topic partitions</b></li>
-        <li>📡 Each broker <b>knows all topics & partitions</b></li>
-        <li>🔄 Provides <b>metadata to producers & consumers</b></li>
-    </ul>
-    <p class="down">⬇️ Kafka Broker Illustration</p>
-</section>
-
-<!-- Slide 3.7: Kafka Broker (Illustration) -->
-<section>
-    <h2>🖥️ Kafka Brokers</h2>
-    <img src="images/kafka-broker.png" alt="Kafka Broker" width="80%" />
+    <img src="images/partitions.png" alt="Kafka Partitions" width="80%" />
     <p class="down">⬇️ Kafka Cluster</p>
 </section>
 
@@ -88,6 +70,24 @@
 <section>
     <h2>🖧 Kafka Cluster Architecture</h2>
     <img src="images/kafka-cluster.png" alt="Kafka Cluster" width="80%" />
+    <p class="down">⬇️ Kafka Broker</p>
+</section>
+
+<!-- Slide 3.6: Kafka Broker -->
+<section>
+    <h2>🔹 Kafka Broker</h2>
+    <ul>
+        <li>🖥️ A <b>server that stores topic partitions</b></li>
+        <li>📡 Each broker <b>knows all topics & partitions</b></li>
+        <li>🔄 Provides <b>metadata to producers & consumers</b></li>
+    </ul>
+    <p class="down">⬇️ Kafka Broker Illustration</p>
+</section>
+
+<!-- Slide 3.7: Kafka Broker (Illustration) -->
+<section>
+    <h2>🖥️ Kafka Brokers</h2>
+    <img src="images/kafka-broker-partitions.png" alt="Kafka Broker" />
     <p class="down">⬇️ Topic Replication</p>
 </section>
 
@@ -105,7 +105,19 @@
 <!-- Slide 3.11: Replication Factor (Illustration) -->
 <section>
     <h2>🛡️ Kafka Replication Factor</h2>
-    <img src="images/kafka-replication.png" alt="Kafka Replication" width="80%" />
+    <img src="images/kafka-leader-0.png" alt="Kafka Replication" width="80%" />
+    <p class="down">⬇️ Producers</p>
+</section>
+
+<section>
+    <h2>🛡️ Kafka Replication Factor</h2>
+    <img src="images/kafka-leader-1.png" alt="Kafka Replication" width="80%" />
+    <p class="down">⬇️ Producers</p>
+</section>
+
+<section>
+    <h2>🛡️ Kafka Replication Factor</h2>
+    <img src="images/kafka-leader-2.png" alt="Kafka Replication" width="80%" />
     <p class="down">⬇️ Producers</p>
 </section>
 
@@ -117,13 +129,6 @@
         <li>🎯 Decide which <b>partition to write to</b></li>
         <li>⚖️ <b>Load balancing</b> using round-robin</li>
     </ul>
-    <p class="down">⬇️ Producer Illustration</p>
-</section>
-
-<!-- Slide 3.13: Producer (Illustration) -->
-<section>
-    <h2>✉️ Kafka Producers</h2>
-    <img src="images/kafka-producer.png" alt="Kafka Producer" width="80%" />
     <p class="down">⬇️ Consumers</p>
 </section>
 
@@ -135,13 +140,25 @@
         <li>📌 Read messages <b>in order within partitions</b></li>
         <li>🔄 Can belong to <b>consumer groups</b></li>
     </ul>
-    <p class="down">⬇️ Consumer Illustration</p>
+    <p class="down">⬇️ Illustration</p>
 </section>
 
 <!-- Slide 3.15: Consumer (Illustration) -->
 <section>
-    <h2>📥 Kafka Consumers</h2>
-    <img src="images/kafka-consumer.png" alt="Kafka Consumer" width="80%" />
+    <h2>📥 Kafka Producers & Consumers</h2>
+    <img src="images/consumers-producers.png" alt="Kafka Consumer" width="80%" />
+    <p class="down">⬇️ Consumer groups</p>
+</section>
+
+<section>
+    <h2>📥 Consumer Groups</h2>
+    <img src="images/consumer-groups.png" alt="Kafka Consumer" width="80%" />
+    <p class="down">⬇️ Offsets</p>
+</section>
+
+<section>
+    <h2>📥 Offset Example</h2>
+    <img src="images/offset-example.png" alt="Kafka Consumer" width="80%" />
     <p class="down">⬇️ Zookeeper</p>
 </section>
 
@@ -159,6 +176,6 @@
 <!-- Slide 3.17: Zookeeper (Illustration) -->
 <section>
     <h2>🔧 Kafka Zookeeper</h2>
-    <img src="images/kafka-zookeeper.png" alt="Kafka Zookeeper" width="80%" />
-    <p class="down">Kafka Streams API ➡️</p>
+    <img src="images/zookeeper-1.png" alt="Kafka Zookeeper" width="80%" />
+    <p class="down">Exercise: Design ➡️</p>
 </section>
