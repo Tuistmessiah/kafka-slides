@@ -154,6 +154,65 @@ if (event.count > 50) {
 
 <section>
     <h2>📝 Step 8: Architecture Diagram</h2>
-    <img src="/mnt/data/A_detailed_architecture_diagram_of_a_Kafka-based_I.png" alt="Kafka IoT Architecture" />
+
+    <svg viewBox="0 0 800 400" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="font-family: sans-serif; font-size: 14px">
+        <!-- IOT Devices -->
+        <rect x="10" y="150" width="120" height="40" fill="#ffffff" stroke="#000" />
+        <text x="30" y="175">IoT Devices</text>
+
+        <!-- Producer -->
+        <rect x="150" y="150" width="100" height="40" fill="#fff0f6" stroke="#000" />
+        <text x="165" y="175">Kafka Producer</text>
+
+        <!-- Kafka Brokers -->
+        <rect x="280" y="60" width="100" height="40" fill="#fffbe6" stroke="#000" />
+        <text x="295" y="85">Kafka Broker</text>
+
+        <rect x="280" y="120" width="100" height="40" fill="#fffbe6" stroke="#000" />
+        <text x="295" y="145">Kafka Broker</text>
+
+        <rect x="280" y="180" width="100" height="40" fill="#fffbe6" stroke="#000" />
+        <text x="295" y="205">Kafka Broker</text>
+
+        <!-- Consumer -->
+        <rect x="410" y="60" width="100" height="40" fill="#f9f0ff" stroke="#000" />
+        <text x="430" y="85">Consumer</text>
+
+        <!-- Stream Processor -->
+        <rect x="410" y="180" width="130" height="40" fill="#e6fffb" stroke="#000" />
+        <text x="420" y="205">Stream Processor</text>
+
+        <!-- Storage -->
+        <rect x="570" y="40" width="100" height="40" fill="#f6ffed" stroke="#000" />
+        <text x="595" y="65">Database</text>
+
+        <rect x="570" y="100" width="100" height="40" fill="#f6ffed" stroke="#000" />
+        <text x="595" y="125">Data Lake</text>
+
+        <!-- Dashboard -->
+        <rect x="570" y="180" width="100" height="40" fill="#e6f7ff" stroke="#000" />
+        <text x="595" y="205">Dashboard</text>
+
+        <!-- Arrows (white) -->
+        <line x1="130" y1="170" x2="150" y2="170" stroke="#fff" stroke-width="2" marker-end="url(#arrow)" />
+        <line x1="250" y1="170" x2="280" y2="170" stroke="#fff" stroke-width="2" marker-end="url(#arrow)" />
+        <line x1="380" y1="80" x2="410" y2="80" stroke="#fff" stroke-width="2" marker-end="url(#arrow)" />
+        <line x1="380" y1="200" x2="410" y2="200" stroke="#fff" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- From Consumer to DB/Data Lake -->
+        <line x1="510" y1="80" x2="570" y2="60" stroke="#fff" stroke-width="2" marker-end="url(#arrow)" />
+        <line x1="510" y1="80" x2="570" y2="120" stroke="#fff" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- From Stream Processor to Dashboard -->
+        <line x1="540" y1="200" x2="570" y2="200" stroke="#fff" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Arrow marker -->
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L9,3 z" fill="#fff" />
+            </marker>
+        </defs>
+    </svg>
+
     <p class="down">Summary ➡️</p>
 </section>
